@@ -1,9 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:bitcoin_app/constant.dart';
 import 'package:bitcoin_app/widgets/bottom_bar.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
   );
@@ -16,7 +18,12 @@ void main() {
     ),
   );
 
-  runApp(const CryptoWallet());
+  runApp(
+    const GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: CryptoWallet(),
+    ),
+  );
 }
 
 class CryptoWallet extends StatelessWidget {

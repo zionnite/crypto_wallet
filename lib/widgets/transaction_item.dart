@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constant.dart';
@@ -43,6 +43,7 @@ class TransactionItem extends StatelessWidget {
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ClipOval(
                   child: Container(
@@ -71,28 +72,34 @@ class TransactionItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      type,
-                      style: kInfo.copyWith(
-                        fontWeight: FontWeight.bold,
+                    Expanded(
+                      child: Text(
+                        type,
+                        style: kInfo.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                    const SizedBox(height: 2),
-                    Text(
-                      percent,
-                      style: kInfo.copyWith(
-                        color: Colors.white30,
+                    const Expanded(child: SizedBox(height: 2)),
+                    Expanded(
+                      child: Text(
+                        percent,
+                        style: kInfo.copyWith(
+                          color: Colors.white30,
+                        ),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(width: 89),
-                Text(
-                  value,
-                  style: kInfo.copyWith(
-                    fontWeight: FontWeight.bold,
+                const Expanded(child: SizedBox(width: 89)),
+                Expanded(
+                  child: Text(
+                    value,
+                    style: kInfo.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.right,
                   ),
-                  textAlign: TextAlign.right,
                 ),
               ],
             ),

@@ -11,15 +11,15 @@ class Buttons extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: FadeInUp(
         duration: const Duration(milliseconds: 1100),
-        child: Row(
+        child: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: [
             CustomButton(
               title: 'Add Funds',
               svgPath: 'assets/icons/add.svg',
             ),
             CustomButton(
-              title: 'Transfer Funds',
+              title: 'Pay Bills',
               svgPath: 'assets/icons/send.svg',
             ),
           ],

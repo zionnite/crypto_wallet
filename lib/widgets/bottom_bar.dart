@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:bitcoin_app/constant.dart';
 import 'package:bitcoin_app/screens/home_screen.dart';
 import 'package:bitcoin_app/screens/transaction_screen.dart';
-import 'package:bitcoin_app/constant.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
@@ -12,7 +12,10 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
-  final List _page = [const HomeScreen(), const TransactionScreen()];
+  final List _page = [
+    const HomeScreen(),
+    const TransactionScreen(),
+  ];
   int _selectedIndex = 0;
 
   @override
@@ -20,7 +23,7 @@ class _BottomBarState extends State<BottomBar> {
     return Scaffold(
       body: _page[_selectedIndex],
       bottomNavigationBar: Container(
-        height: 80,
+        height: 100,
         decoration: const BoxDecoration(
           color: Colors.transparent,
         ),
@@ -44,15 +47,17 @@ class _BottomBarState extends State<BottomBar> {
               height: 50,
               width: 133,
               child: TextButton(
-                child: const Text('Pay Now'),
-                onPressed: () {},
+                child: const Text('Chat'),
+                onPressed: () {
+                  print('hello');
+                },
                 style: TextButton.styleFrom(
                   primary: kTextColor,
                   backgroundColor: kSecondaryColor,
                   textStyle: kSFUI16,
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(
-                      Radius.circular(9),
+                      Radius.circular(35),
                     ),
                   ),
                 ),
